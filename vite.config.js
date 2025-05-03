@@ -1,13 +1,13 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { configDotenv } from "dotenv";
+import tailwind from "@tailwindcss/vite-plugin"; // Correct package name
 
 // Load environment variables
 configDotenv();
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), tailwind()],
   test: {
     globals: true,
     environment: "jsdom",

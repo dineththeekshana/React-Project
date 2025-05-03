@@ -6,6 +6,7 @@ import Logo from "../assets/img/logo.svg";
 import { BsBag } from "react-icons/bs";
 import { CiUser } from "react-icons/ci";
 import { useAuth } from "../contexts/AuthContext"; // Import the auth context
+import { SidebarContext } from "../contexts/SidebarContext.jsx";
 
 const Header = () => {
 	// header state
@@ -13,6 +14,7 @@ const Header = () => {
 	const { itemAmount } = useContext(CartContext);
 	const { currentUser, logout } = useAuth(); // Add authentication context
 	const navigate = useNavigate(); // Add navigation hook
+	const { isOpen, setIsOpen } = useContext(SidebarContext);
 
 	// currency state
 	const { currency, setCurrency } = useContext(CurrencyContext);
