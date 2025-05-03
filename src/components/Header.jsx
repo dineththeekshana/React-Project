@@ -15,7 +15,7 @@ const Header = () => {
 	const navigate = useNavigate(); // Add navigation hook
 
 	// currency state
-	const { currency } = useContext(CurrencyContext);
+	const { currency, setCurrency } = useContext(CurrencyContext);
 
 	// event listener
 	useEffect(() => {
@@ -64,7 +64,7 @@ const Header = () => {
 					{/* currency select */}
 					<select
 						value={currency}
-						onChange={() => {}}
+						onChange={(e) => setCurrency(e.target.value)}
 						className="border border-slate-800 rounded-md px-3 py-2 focus:outline-none text-slate-800 text-sm"
 						aria-label="Select currency"
 					>
@@ -75,7 +75,7 @@ const Header = () => {
 
 					{/* cart */}
 					<div
-						onClick={() => {}}
+						onClick={() => setIsOpen(true)} // From SidebarContext
 						className="cart-btn cursor-pointer flex relative"
 						role="button"
 						aria-label="cart"
